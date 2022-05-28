@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+</head>
+<body> 
+    <h1>Predict Credit Risk</h1>
+    <form action="{{url_for('predict')}}" method="post">
+        <label >Age:</label><br>
+        <input type="text" name="age" placeholder="[18-99]" required="required"><br>
+        <label >Annual customer income:</label><br>
+        <input type="text" name="income" placeholder="Income" required="required"><br>
+        <label >Type of home ownership:</label><br>
+        <label >0 - RENT</label><br>
+        <label >1 - OWN</label><br>
+        <label >2 - MORTGAGE</label><br>
+        <label >3 - OTHER</label><br>
+        <input type="text" name="home" placeholder="Home type" required="required"><br>
+        <label >Work experience in years:</label><br>
+        <input type="text" name="job" placeholder="Work experience" required="required"><br>
+        <label >Loan intent:</label><br>
+        <label >0 - OWNERSHIP</label><br>
+        <label >1 - MEDICAL</label><br>
+        <label >2 - DEBTCONSOLIDATION</label><br>
+        <label >3 - VENTURE</label><br>
+        <label >4 - EDUCATION</label><br>
+        <label >5 - PERSONAL</label><br>
+        <input type="text" name="loan_intent" placeholder="[0-5]" required="required"><br>
+        <label >Loan grade:</label><br>
+        <label >1 - A</label><br>
+        <label >3 - B</label><br>
+        <label >0 - C</label><br>
+        <label >4 - D</label><br>
+        <label >5 - E</label><br>
+        <label >2 - F</label><br>
+        <label >6 - G</label><br>
+        <input type="text" name="loan_grade" placeholder="Loan grade" required="required"><br>
+        <label >Loan amount($):</label><br>
+        <input type="text" name="loan_amnt" placeholder="Loan amount $" required="required"><br>
+        <label >Interest rate:</label><br>
+        <input type="text" name="int_rate" placeholder="[5.00-24.00]" required="required"><br>
+        <label >Previous defaults:</label><br>
+        <label >0 - NO</label><br>
+        <label >1 - YES</label><br>
+        <input type="text" name="defaults" placeholder="Defaults" required="required"><br>
+        <label >Number of previous credits:</label><br>
+        <input type="text" name="cred_hist" placeholder="Credit history" required="required"><br>
+        <button type="submit" class="btn btn-primary">Predict</button>
+
+    </form>   
+    <br>
+    <br>
+    {{ predict_text }} 
+
+</body>
+
+
+</html>
